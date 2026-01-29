@@ -39,39 +39,102 @@ const singleSystem = {
         "temperatureThreshold": "200C",
         "safetyValve": "enabled"
     },
-    "CollabData": {
-        "conversationId": "chat-101",
+   "collabData": {
+    "groupChats": [
+      {
+        "conversationId": "group-chat-101",
+        "collbInstanceName": "Boiler System Monthly Operational Data",
+        "chatType": "GROUP",
+        "participants": [
+          { "userId": "userA", "name": "Rahul Setty" },
+          { "userId": "userB", "name": "Will Jackson" },
+          { "userId": "userAdmin", "name": "Tata Manager" }
+        ],
         "messages": [
-            {
-                "id": "msg001",
-                "collbInstanceName": "Boiler System Monthly operational data Chat",
-                "senderId": "userA",
-                "senderName": "Rahul setty",
-                "message": "Hi everyone, are we ready for the demo?",
-                "timestamp": "2026-01 - 28T10:00:00Z",
-                "type": "text"
-            },
-            {
-                "id": "msg001",
-                "collbInstanceName": "Boiler System Monthly operational data Chat",
-                "senderId": "userAdmin",
-                "senderName": "tata manager",
-                "message": "Okay, let's proceed with the system analysis.",
-                "timestamp": "2026-01 - 28T10:00:00Z",
-                "type": "text"
-            },
-            {
-                "id": "msg002",
-                "collbInstanceName": "Boiler System maintenance analysis Chat",
-                "senderId": "userB",
-                "senderName": "will jackson",
-                "message": "Yes, I just uploaded the new API specs.",
-                "timestamp": "2026-01-28T10:01:00Z",
-                "type": "file",
-                "fileUrl": "/files/specs.pdf"
-            }
+          {
+            "id": "msg001",
+            "senderId": "userA",
+            "senderName": "Rahul Setty",
+            "message": "Hi everyone, are we ready for the demo?",
+            "timestamp": "2026-01-28T10:00:00Z",
+            "type": "text"
+          },
+          {
+            "id": "msg002",
+            "senderId": "userAdmin",
+            "senderName": "Tata Manager",
+            "message": "Okay, let's proceed with the system analysis.",
+            "timestamp": "2026-01-28T10:00:30Z",
+            "type": "text"
+          },
+          {
+            "id": "msg003",
+            "senderId": "userB",
+            "senderName": "Will Jackson",
+            "message": "I’ve uploaded the new API specs.",
+            "timestamp": "2026-01-28T10:01:00Z",
+            "type": "file",
+            "fileUrl": "/files/specs.pdf"
+          }
         ]
-    },
+      }
+    ],
+    "privateChats": [
+      {
+        "conversationId": "private-chat-201",
+        "chatType": "PRIVATE",
+        "participants": [
+          { "userId": "userA", "name": "Rahul Setty" },
+          { "userId": "userAdmin", "name": "Tata Manager" }
+        ],
+        "messages": [
+          {
+            "id": "pmsg001",
+            "senderId": "userAdmin",
+            "senderName": "Tata Manager",
+            "message": "Rahul, please focus on the performance metrics during the demo.",
+            "timestamp": "2026-01-28T09:55:00Z",
+            "type": "text"
+          },
+          {
+            "id": "pmsg002",
+            "senderId": "userA",
+            "senderName": "Rahul Setty",
+            "message": "Sure, I’ll cover efficiency and downtime details.",
+            "timestamp": "2026-01-28T09:56:00Z",
+            "type": "text"
+          }
+        ]
+      },
+
+      {
+        "conversationId": "private-chat-202",
+        "chatType": "PRIVATE",
+        "participants": [
+          { "userId": "userB", "name": "Will Jackson" },
+          { "userId": "userA", "name": "Rahul Setty" }
+        ],
+        "messages": [
+          {
+            "id": "pmsg003",
+            "senderId": "userB",
+            "senderName": "Will Jackson",
+            "message": "Did you check the API error handling part?",
+            "timestamp": "2026-01-28T09:50:00Z",
+            "type": "text"
+          },
+          {
+            "id": "pmsg004",
+            "senderId": "userA",
+            "senderName": "Rahul Setty",
+            "message": "Yes, looks good. Just minor validation updates needed.",
+            "timestamp": "2026-01-28T09:51:00Z",
+            "type": "text"
+          }
+        ]
+      }
+    ]
+  },
     "input_schema": { "type": "object", "properties": { "temp": { "type": "number" } } },
     "output_schema": { "type": "object", "properties": { "efficiency": { "type": "number" } } },
     "subSystems": {
