@@ -137,23 +137,43 @@ const singleSystem = {
   },
     "input_schema": { "type": "object", "properties": { "temp": { "type": "number" } } },
     "output_schema": { "type": "object", "properties": { "efficiency": { "type": "number" } } },
-    "subSystems": {
+    "subSystem-noded-data": {
         "totalSubsystem": 3,
         "subSystemlist": [
             {
                 "id": "node1",
                 "name": "input-subsystem",
                 "type": "input",
+                "config": {
+                    "schema": {
+                        "type": "PROTOCOL",
+                    },
+                    "properties": {
+                            "procotol-1": "api",
+                            "protocol-2": "manual"
+                    }
+                }
             },
             {
                 "id": "node2",
                 "name": "subsystem-2",
                 "type": "ALmodel",
+                "config": {
+                    "modelType": "Neural Network",
+                    "parameters": {
+                        "layers": 4,
+                        "activation": "ReLU"
+                    }
+                }
             },
             {
                 "id": "node3",
                 "name": "Output-log",
                 "type": "Output",
+                "config": {
+                    "destination": "database",
+                    "format": "JSON"
+                }
             }
         ],
          "Relation": [
